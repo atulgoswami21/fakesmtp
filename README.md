@@ -8,7 +8,7 @@ Mailtrap is a fake SMTP server for development teams to test, view and share ema
 Visit https://mailtrap.io/register/signup
 
 ## How To Install
-* Clone this repo: git clone git@github.com:Mediotype/Mailtrap.git
+* Clone this repo: `git clone git@github.com:Mediotype/Mailtrap.git`
 * Run the setup: `php bin/magento setup:upgrade`
 
 ## Configure
