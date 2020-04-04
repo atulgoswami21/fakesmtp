@@ -1,15 +1,9 @@
-# Mailtrap
-A simple Mailtrap extension for Magento 2
-
-## What Is Mailtrap?
-Mailtrap is a fake SMTP server for development teams to test, view and share emails sent from the development and staging environments without spamming real customers.
-
-## Signup For Mailtrap
-Visit https://mailtrap.io/register/signup
+# FakeSmtp
+Fake Smtp extension for Magento 2
 
 ## How To Install
-* Clone this repo: `git clone git@github.com:Mediotype/Mailtrap.git`
+* Clone this repo and upload to app/code/ART/FakeSmtp
 * Run the setup: `php bin/magento setup:upgrade`
 
 ## Configure
-You can find the configuration by going to `Stores > Configuration > Mediotype > Mailtrap`. You'll need to enable the extension by setting `Enabled` to `Yes`. This will then display the fields for `Mailtrap Username` and `Mailtrap Password`. You can find these in your Mailtrap mailbox settings.
+You can find the configuration by going to `Stores > Configuration > ART > Fake Smtp`. You'll need to enable the extension by setting `Enabled` to `Yes`.

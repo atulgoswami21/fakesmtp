@@ -1,31 +1,38 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="mediotype" translate="label" sortOrder="500">
-            <label>Mediotype</label>
+        <tab id="art2" translate="label" sortOrder="500">
+            <label>ART Extensions</label>
         </tab>
-        <section id="mailtrap" translate="label" type="text" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
-            <label>Mailtrap</label>
-            <tab>mediotype</tab>
-            <resource>Mediotype_Mailtrap::config</resource>
+        <section id="fakesmtp" translate="label" type="text" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>FakeSmtp Setting</label>
+            <tab>art2</tab>
+            <resource>ART2_FakeSmtp::config</resource>
 
             <group id="settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Configuration</label>
 
                 <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enabled</label>
-                    <config_path>mediotype/mailtrap/enabled</config_path>
+                    <config_path>art2/fakesmtp/enabled</config_path>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-
+                <field id="server" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Server</label>
+                    <config_path>art2/fakesmtp/server</config_path>
+                </field>
+                <field id="port" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Port</label>
+                    <config_path>art2/fakesmtp/port</config_path>
+                </field>
                 <field id="username" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Mailtrap Username</label>
-                    <config_path>mediotype/mailtrap/username</config_path>
+                    <label>Username</label>
+                    <config_path>art2/fakesmtp/username</config_path>
                 </field>
 
                 <field id="password" translate="label" type="obscure" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Mailtrap Password</label>
-                    <config_path>mediotype/mailtrap/password</config_path>
+                    <label>Password</label>
+                    <config_path>art2/fakesmtp/password</config_path>
                     <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
                 </field>
             </group>

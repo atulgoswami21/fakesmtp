@@ -6,7 +6,7 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="Mediotype_Mailtrap::config" title="Mediotype Mailtrap configuration" sortOrder="100" />
+                            <resource id="ART2_FakeSmtp::config" title="Fake Smtp configuration" sortOrder="100" />
                         </resource>
                     </resource>
                 </resource>

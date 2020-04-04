@@ -4,6 +4,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'Mediotype_Mailtrap',
+    'ART2_FakeSmtp',
     __DIR__
 );

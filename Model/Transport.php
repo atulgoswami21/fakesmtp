@@ -1,6 +1,6 @@
 <?php
 
-namespace Mediotype\Mailtrap\Model;
+namespace ART2\FakeSmtp\Model;
 
 use Magento\Framework\Exception\MailException;
 use Magento\Framework\Mail\MessageInterface;
@@ -12,7 +12,7 @@ class Transport extends \Zend_Mail_Transport_Smtp implements TransportInterface
     /**
      * Mailtrap SMTP hostname
      */
-    const HOSTNAME = 'smtp.mailtrap.io';
+    //const HOSTNAME = 'smtp.mailtrap.io';
 
     /**
      * @var \Magento\Framework\Mail\MessageInterface
@@ -53,15 +53,18 @@ class Transport extends \Zend_Mail_Transport_Smtp implements TransportInterface
         $config = [
             "auth" => "login",
             "tsl" => "tsl",
-            "port" => "465",
-            "username" => $this->scopeConfig->getValue("mediotype/mailtrap/username"),
-            "password" => $this->scopeConfig->getValue("mediotype/mailtrap/password")
+            "port" => $this->scopeConfig->getValue("art2/fakesmtp/port"),
+            "username" => $this->scopeConfig->getValue("art2/fakesmtp/username"),
+            "password" => $this->scopeConfig->getValue("art2/fakesmtp/password")
         ];
 
+        $server = $this->scopeConfig->getValue("art2/fakesmtp/server");
+
+        //self::HOSTNAME
         /**
          * Call parent contstructor
          */
-        parent::__construct(self::HOSTNAME, $config);
+        parent::__construct($server, $config);
     }
 
     /**
@@ -77,5 +80,12 @@ class Transport extends \Zend_Mail_Transport_Smtp implements TransportInterface
         } catch (\Exception $e) {
             throw new MailException(__($e->getMessage()));
         }
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getMessage()
+    {
+        return $this->message;
     }
 }
